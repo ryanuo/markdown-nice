@@ -13,7 +13,7 @@ export default `#nice {
 /* 一级标题 */
 #nice h1 {
   text-align:center;
-  background-image: 	url(http://img.xiaogangzai.cn/title_h1.png); 
+  background-image: url(https://img.cdn1.vip/i/6a425d3388752_1782734131.png); 
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 75px;
@@ -35,7 +35,7 @@ export default `#nice {
 #nice h2 {
   display:block;
   text-align:center;
-  background-image: 	url(http://img.xiaogangzai.cn/title.png); 
+  background-image: url(https://img.cdn1.vip/i/6a425d338887a_1782734131.png); 
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: initial;
@@ -67,18 +67,12 @@ export default `#nice {
 }
 /* 三级标题 */
 #nice h3:before {
-  content: "";
-  background-image:url(http://img.xiaogangzai.cn/title_h2.png);
-  background-size:100% 100%;
-  background-repeat:no-repeat;
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  line-height:15px;
-  margin-bottom:-1px;
 }
 #nice h3 {
+  background: url(https://img.cdn1.vip/i/6a425d33eda49_1782734131.png) 5px 56% /
+    15px 15px no-repeat scroll padding-box border-box transparent;
   margin-top:1.2em;
+  padding-left: 26px;
 }
 #nice h4 {
   margin-top: 30px;
@@ -88,7 +82,6 @@ export default `#nice {
   font-size:17px;
   font-weight:bold;
   display:inline-block;
-  margin-left:8px;
   color:#48b378;
 }
 /* 三级标题修饰 请参考有实例的主题 */
@@ -202,6 +195,7 @@ export default `#nice {
   display: block;
   width: auto;
   height: auto;
+  color: #48b378;
 }
 /* 参考资料编号 */
 #nice .footnote-num {
