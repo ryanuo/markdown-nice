@@ -111,9 +111,14 @@ export const markdownParser = new MarkdownIt({
         console.log(e);
       }
     }
+
     return (
       '<pre class="custom"><code class="hljs">' +
-      markdownParser.utils.escapeHtml(str).replace(/\n/g, "<br/>") +
+      markdownParser.utils
+        .escapeHtml(str)
+        .replace(/\n/g, "<br/>")
+        .replace(/\s/g, "&nbsp;")
+        .replace(/span&nbsp;/g, "span ") +
       "</code></pre>"
     );
   },
