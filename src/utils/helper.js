@@ -96,6 +96,7 @@ markdownParserWechat
 // 普通解析器，代码高亮用highlight
 export const markdownParser = new MarkdownIt({
   html: true,
+  breaks: true,
   highlight: (str, lang) => {
     // 加上custom则表示自定义样式，而非微信专属，避免被remove pre
     if (lang && highlightjs.getLanguage(lang)) {
@@ -110,7 +111,11 @@ export const markdownParser = new MarkdownIt({
         console.log(e);
       }
     }
-    return '<pre class="custom"><code class="hljs">' + markdownParser.utils.escapeHtml(str) + "</code></pre>";
+    return (
+      '<pre class="custom"><code class="hljs">' +
+      markdownParser.utils.escapeHtml(str).replace(/\n/g, "<br/>") +
+      "</code></pre>"
+    );
   },
 });
 
