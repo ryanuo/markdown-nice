@@ -1,12 +1,6 @@
-import React, {Component} from "react";
-import {Menu, Dropdown} from "antd";
+import { Component } from 'react'
 
-import FullScreen from "./View/FullScreen";
-import EditArea from "./View/EditArea";
-import PreviewArea from "./View/PreviewArea";
-import ThemeArea from "./View/ThemeArea";
-
-import "./common.css";
+import './common.css'
 
 const menu = (
   <Menu>
@@ -26,18 +20,18 @@ const menu = (
       <ThemeArea />
     </Menu.Item>
   </Menu>
-);
+)
 
 class View extends Component {
   render() {
     return (
-      <Dropdown overlay={menu} trigger={["click"]} overlayClassName="nice-overlay">
+      <Dropdown overlay={menu} trigger={['click']} overlayClassName="nice-overlay">
         <a id="nice-menu-view" className="nice-menu-link" href="#">
           查看
         </a>
       </Dropdown>
-    );
+    )
   }
 }
 
-export default View;
+export default View

@@ -1,5 +1,4 @@
-/config/
-/scripts/
-*.test.*
-/main.js
-*.d.ts
+src/
+stories/
+main.js
+watch.js

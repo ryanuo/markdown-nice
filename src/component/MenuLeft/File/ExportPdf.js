@@ -1,13 +1,13 @@
-import React, {Component} from "react";
+import { Component } from 'react'
 
-import "../common.css";
+import '../common.css'
 
 class ExportPdf extends Component {
   handleClick = () => {
     setTimeout(() => {
-      window.print();
-    }, 500);
-  };
+      window.print()
+    }, 500)
+  }
 
   render() {
     return (
@@ -17,8 +17,8 @@ class ExportPdf extends Component {
           <span className="nice-menu-name">导出 PDF</span>
         </span>
       </div>
-    );
+    )
   }
 }
 
-export default ExportPdf;
+export default ExportPdf

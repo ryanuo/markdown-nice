@@ -1,7 +1,6 @@
-import React, {Component} from "react";
-import {Menu, Dropdown} from "antd";
+import { Component } from 'react'
 
-import "./common.css";
+import './common.css'
 
 const menu = (
   <Menu>
@@ -21,18 +20,18 @@ const menu = (
       </a>
     </Menu.Item>
   </Menu>
-);
+)
 
 class Paragraph extends Component {
   render() {
     return (
-      <Dropdown overlay={menu} trigger={["click"]} overlayClassName="nice-overlay">
+      <Dropdown overlay={menu} trigger={['click']} overlayClassName="nice-overlay">
         <a className="nice-menu-link" href="#">
           段落
         </a>
       </Dropdown>
-    );
+    )
   }
 }
 
-export default Paragraph;
+export default Paragraph

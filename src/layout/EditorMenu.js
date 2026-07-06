@@ -1,10 +1,6 @@
-import React, {Component} from "react";
-import {Menu} from "antd";
+import { Component } from 'react'
 
-import LinkToFoot from "../component/MenuLeft/Pattern/LinkToFoot";
-import Format from "../component/MenuLeft/Pattern/Format";
-import Image from "../component/MenuLeft/Pattern/Image";
-import "./EditorMenu.css";
+import './EditorMenu.css'
 
 class EditorMenu extends Component {
   render() {
@@ -20,8 +16,8 @@ class EditorMenu extends Component {
           <Image />
         </Menu.Item>
       </Menu>
-    );
+    )
   }
 }
 
-export default EditorMenu;
+export default EditorMenu

@@ -1,10 +1,4 @@
-import React, {Component} from "react";
-import ImageDialog from "../component/Dialog/ImageDialog";
-import LinkDialog from "../component/Dialog/LinkDialog";
-import AboutDialog from "../component/Dialog/AboutDialog";
-import FormDialog from "../component/Dialog/FormDialog";
-import HistoryDialog from "../component/Dialog/HistoryDialog";
-import SitDownDialog from "../component/Dialog/SitDownDialog";
+import { Component } from 'react'
 
 class Dialog extends Component {
   render() {
@@ -17,8 +11,8 @@ class Dialog extends Component {
         <HistoryDialog />
         <SitDownDialog />
       </div>
-    );
+    )
   }
 }
 
-export default Dialog;
+export default Dialog

@@ -1,7 +1,6 @@
-import React from "react";
-import "./index.css";
+import './index.css'
 
-export default ({fill = "rgba(0,0,0,0.65)", style = {}, className = "icon", viewBox = "0 0 40 40"}) => (
+export default ({ fill = 'rgba(0,0,0,0.65)', style = {}, className = 'icon', viewBox = '0 0 40 40' }) => (
   <svg
     style={style}
     viewBox={viewBox}
@@ -42,4 +41,4 @@ export default ({fill = "rgba(0,0,0,0.65)", style = {}, className = "icon", view
       </g>
     </g>
   </svg>
-);
+)

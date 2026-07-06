@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`markdownParser (default) parity > produces a stable full-shape snapshot > default-parser-output 1`] = `
+"<h1><span class="prefix"></span><span class="content">Hello World</span><span class="suffix"></span></h1>
+<p>This paragraph has <strong>bold</strong>, <em>italic</em>, and <code>inline code</code>.</p>
+<h2><span class="prefix"></span><span class="content">Code</span><span class="suffix"></span></h2>
+<pre class="custom"><code class="hljs"><span class="hljs-keyword">const</span>&nbsp;<span class="hljs-title&nbsp;function_">add</span>&nbsp;=&nbsp;(<span class="hljs-params">a,&nbsp;b</span>)&nbsp;=&gt;&nbsp;a&nbsp;+&nbsp;b<br/><span class="hljs-variable&nbsp;language_">console</span>.<span class="hljs-title&nbsp;function_">log</span>(<span class="hljs-title&nbsp;function_">add</span>(<span class="hljs-number">1</span>,&nbsp;<span class="hljs-number">2</span>))<br/></code></pre>
+<h2><span class="prefix"></span><span class="content">Math</span><span class="suffix"></span></h2>
+<p>Inline math $E=mc^2$ and block:</p>
+$$\\int_0^1 x^2 dx = \\frac{1}{3}
+$$
+<h2><span class="prefix"></span><span class="content">List</span><span class="suffix"></span></h2>
+<ul>
+<li><section>item one</section></li><li><section>item two
+<ul>
+<li><section>nested</section></li></ul>
+</section></li></ul>
+<h2><span class="prefix"></span><span class="content">Link &amp; Footnote</span><span class="suffix"></span></h2>
+<p>A ref[^1](https://example.com/footnote)</p>
+<h2><span class="prefix"></span><span class="content">Image</span><span class="suffix"></span></h2>
+<p><img src="https://example.com/a.png" alt="example"></p>
+"
+`;

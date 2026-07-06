@@ -1,10 +1,6 @@
-import React, {Component} from "react";
-import {Menu, Dropdown} from "antd";
+import { Component } from 'react'
 
-import SyncScroll from "./Setting/SyncScroll";
-import ContainImgName from "./Setting/ContainImgName";
-
-import "./common.css";
+import './common.css'
 
 const menu = (
   <Menu>
@@ -15,18 +11,18 @@ const menu = (
       <ContainImgName />
     </Menu.Item>
   </Menu>
-);
+)
 
 class Setting extends Component {
   render() {
     return (
-      <Dropdown overlay={menu} trigger={["click"]} overlayClassName="nice-overlay">
+      <Dropdown overlay={menu} trigger={['click']} overlayClassName="nice-overlay">
         <a id="nice-menu-setting" className="nice-menu-link" href="#">
           设置
         </a>
       </Dropdown>
-    );
+    )
   }
 }
 
-export default Setting;
+export default Setting
