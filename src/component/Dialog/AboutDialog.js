@@ -55,11 +55,10 @@ class AboutDialog extends Component {
             id="nice-about-dialog-github"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/mdnice/markdown-nice"
+            href="https://github.com/whaoa/markdown-nice"
           >
             &nbsp;Markdown Nice&nbsp;
           </a>
-          ，基于 [master 分支的 8f5205c] 进行的二次修改。
         </p>
         <p style={style.lineHeight}>支持自定义样式的 Markdown 编辑器；</p>
         <p style={style.lineHeight}>支持微信公众号、知乎和稀土掘金；</p>
@@ -68,7 +67,7 @@ class AboutDialog extends Component {
             id="nice-about-dialog-github"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/whaoa/markdown-nice"
+            href="https://github.com/ryanuo/markdown-nice"
           >
             &nbsp;本项目 GitHub 仓库&nbsp;
           </a>
