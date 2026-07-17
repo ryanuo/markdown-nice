@@ -3275,6 +3275,18 @@
       }
 
       setCanvasEditable(true); // main canvas is editable by default
+
+      // 监听父页面传过来的标题数据
+      window.addEventListener('message', function(e) {
+        if (!e.data || e.data.type !== 'setContent') return;
+        if (e.data.title) {
+          document.getElementById('inp-title').value = e.data.title;
+        }
+        if (e.data.subtitle) {
+          document.getElementById('inp-subtitle').value = e.data.subtitle;
+        }
+        syncContent();
+      });
     })();
   </script>
 

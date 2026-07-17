@@ -28,11 +28,7 @@ class Navbar extends Component {
     return (
       <div className={niceNavbarClass}>
         <div className="nice-left-nav">
-          <img
-            src="/logo.png"
-            alt="Inkwell"
-            className="nice-logo"
-          />
+          <img src="/logo.png" alt="Inkwell" className="nice-logo" />
           {title === "" ? null : (
             <section id="nice-title" className="nice-title">
               {title}
