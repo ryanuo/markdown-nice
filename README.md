@@ -1,7 +1,10 @@
-<p align="center">
-<h1 align="center">Inkwell</h1>
-<img align="center" src="/public/logo.png" width="80" />
-</p>
+<div align="center">
+
+<img src="./public/logo.png" width="96" />
+
+<h1>Inkwell</h1>
+
+</div>
 
 ## 简介
 
