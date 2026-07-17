@@ -36,19 +36,6 @@ class AboutDialog extends Component {
           paddingTop: "5px",
         }}
       >
-        <h3 style={style.headerMargin}>
-          Markdown Nice
-          <a
-            id="nice-about-dialog-star"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/mdnice/markdown-nice"
-            style={style.noBorder}
-          >
-            <img alt="" style={style.img} src="https://badgen.net/github/stars/mdnice/markdown-nice" />
-          </a>
-        </h3>
-
         <p style={style.lineHeight}>
           本项目 fork 自
           <a
@@ -57,7 +44,7 @@ class AboutDialog extends Component {
             target="_blank"
             href="https://github.com/whaoa/markdown-nice"
           >
-            &nbsp;Markdown Nice&nbsp;
+            &nbsp;markdown-nice&nbsp;
           </a>
         </p>
         <p style={style.lineHeight}>支持自定义样式的 Markdown 编辑器；</p>

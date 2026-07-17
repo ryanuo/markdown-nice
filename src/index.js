@@ -13,7 +13,7 @@ ReactDOM.render(
       isQiniuyunOpen: true,
       isAliyunOpen: true,
     }}
-    defaultTitle="Markdown Nice"
+    defaultTitle="Inkwell"
   />,
   document.getElementById("root"),
 );

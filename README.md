@@ -1,4 +1,4 @@
-<h1 align="center">Markdown Nice</h1>
+<h1 align="center">Inkwell</h1>
 
 ## 简介
 
@@ -38,3 +38,9 @@
 - [蓝莹](https://mp.weixin.qq.com/s/OfRQaBe3XVXXjE7f84nSwA) `@谭淞宸`
 - [科技蓝](https://mp.weixin.qq.com/s/hEQA4GEFycBjvScko4DeqQ) `@夜尽天明`
 - [简](https://mp.weixin.qq.com/s/JawcVvG_y8igDK5reRDktg) `@aco`
+
+## 封面生成器
+
+内置 [Cover Maker](https://github.com/eternityspring/article-tools/blob/main/cover.html)，感谢 [@eternityspring](https://github.com/eternityspring) 的开源作品。
+
+点击菜单栏「封面」即可使用。

@@ -34,8 +34,15 @@
   margin-top: 5;
 }
 
+.nice-logo {
+  height: 22px;
+  margin-left: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
 .nice-title {
-  padding: 0 10px 0 20px;
+  padding: 0 10px 0 0;
   font-weight: bold;
   font-size: 16px;
   font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia,

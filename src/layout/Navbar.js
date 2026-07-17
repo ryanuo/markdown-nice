@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {observer, inject} from "mobx-react";
 import classnames from "classnames";
 
+import Cover from "../component/MenuLeft/Cover";
 import File from "../component/MenuLeft/File";
 import Help from "../component/MenuLeft/Help";
 import Pattern from "../component/MenuLeft/Pattern";
@@ -27,11 +28,17 @@ class Navbar extends Component {
     return (
       <div className={niceNavbarClass}>
         <div className="nice-left-nav">
+          <img
+            src="/logo.png"
+            alt="Inkwell"
+            className="nice-logo"
+          />
           {title === "" ? null : (
             <section id="nice-title" className="nice-title">
               {title}
             </section>
           )}
+          <Cover />
           <File />
           <Pattern />
           <Function />
