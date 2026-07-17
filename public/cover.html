@@ -2241,10 +2241,18 @@
 
     function syncContent() {
       const cover = document.getElementById('cover-main');
-      cover.querySelector('.label').textContent = document.getElementById('inp-label').value;
-      cover.querySelector('h1').textContent = document.getElementById('inp-title').value;
-      cover.querySelector('.subtitle').textContent = document.getElementById('inp-subtitle').value;
-      cover.querySelector('.meta').textContent = document.getElementById('inp-author').value;
+      const label = document.getElementById('inp-label').value;
+      const title = document.getElementById('inp-title').value;
+      const subtitle = document.getElementById('inp-subtitle').value;
+      const author = document.getElementById('inp-author').value;
+      cover.querySelector('.label').textContent = label;
+      cover.querySelector('h1').textContent = title;
+      cover.querySelector('.subtitle').textContent = subtitle;
+      cover.querySelector('.meta').textContent = author;
+      const raw = localStorage.getItem('cover-state');
+      const state = raw ? JSON.parse(raw) : {};
+      state.content = {label, title, subtitle, author};
+      localStorage.setItem('cover-state', JSON.stringify(state));
       renderActiveTemplate();
     }
 
@@ -2381,6 +2389,11 @@
     function applyPreset(idx) {
       clearTemplate();
       const p = PRESETS[idx];
+      const raw = localStorage.getItem('cover-state');
+      const state = raw ? JSON.parse(raw) : {};
+      state.preset = idx;
+      state.mode = 'preset';
+      localStorage.setItem('cover-state', JSON.stringify(state));
       document.querySelectorAll('.color-btn').forEach(b => b.classList.toggle('active', +b.dataset.scheme === p.scheme));
       applyColorScheme(p.scheme);
       document.querySelectorAll('.deco-btn').forEach(b => b.classList.toggle('active', b.dataset.deco === p.deco));
@@ -2748,6 +2761,11 @@
 
     function applyTemplate(tpl, cardEl) {
       activeTemplate = tpl;
+      const raw = localStorage.getItem('cover-state');
+      const state = raw ? JSON.parse(raw) : {};
+      state.template = tpl.id;
+      state.mode = 'template';
+      localStorage.setItem('cover-state', JSON.stringify(state));
       document.getElementById('cover-main').classList.add('tpl-mode');
       setTemplatePanelsDisabled(true);
       // Seed every typography slider with this template's design defaults so the
@@ -3036,6 +3054,7 @@
     // ── Reset ──────────────────────────────────────────────────────────────
     function resetAll() {
       clearTemplate();
+      localStorage.removeItem('cover-state');
       document.getElementById('inp-label').value = DEFAULT.label;
       document.getElementById('inp-title').value = DEFAULT.title;
       document.getElementById('inp-subtitle').value = DEFAULT.subtitle;
@@ -3199,13 +3218,33 @@
     (async () => {
       const meta = await loadDraftMeta();
 
+      // 恢复上次状态
+      const raw = localStorage.getItem('cover-state');
+      const saved = raw ? JSON.parse(raw) : {};
+      const presetIdx = Number.isFinite(saved.preset) && saved.preset >= 0 && saved.preset < PRESETS.length ? saved.preset : 0;
+      const lastMode = saved.mode;
+
       initFontPicker();
       syncContent();
       syncAllSliders();
       initSourcePanel();
       initPresets();
       initTemplates();
-      applyPreset(0);
+
+      if (lastMode === 'template') {
+        document.querySelectorAll('.preset-card').forEach(c => c.classList.toggle('active', +c.dataset.preset === 0));
+      } else {
+        applyPreset(presetIdx);
+      }
+
+      // 恢复上次的内容
+      if (saved.content) {
+        const s = saved.content;
+        if (s.label)    document.getElementById('inp-label').value    = s.label;
+        if (s.title)    document.getElementById('inp-title').value    = s.title;
+        if (s.subtitle) document.getElementById('inp-subtitle').value = s.subtitle;
+        if (s.author)   document.getElementById('inp-author').value   = s.author;
+      }
 
       if (meta) {
         if (meta.label)    document.getElementById('inp-label').value    = meta.label;
@@ -3275,6 +3314,12 @@
       }
 
       setCanvasEditable(true); // main canvas is editable by default
+
+      // 恢复上次选择的模板（仅模板模式）
+      if (lastMode === 'template' && saved.template) {
+        const tplCard = document.querySelector('.tpl-card[data-tpl="' + saved.template + '"]');
+        if (tplCard) tplCard.click();
+      }
 
       // 监听父页面传过来的标题数据
       window.addEventListener('message', function(e) {
