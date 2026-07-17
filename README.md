@@ -1,6 +1,6 @@
 <p align="center">
 <h1 align="center">Inkwell</h1>
-<img src="/public/logo.png" width="80" />
+<img align="center" src="/public/logo.png" width="80" />
 </p>
 
 ## 简介
