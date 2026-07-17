@@ -3149,7 +3149,8 @@
 
     function exportPng() {
       captureEl(htmlToImage.toPng).then(url => {
-        const a = document.createElement('a'); a.download = 'cover.png'; a.href = url; a.click();
+        const title = (document.getElementById('inp-title').value || 'cover').trim().replace(/[\\/:*?"<>|]/g, '-') || 'cover';
+        const a = document.createElement('a'); a.download = title + '.png'; a.href = url; a.click();
       }).catch(err => { console.error('exportPng failed:', err); });
     }
 
